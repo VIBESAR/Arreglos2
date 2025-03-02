@@ -8,13 +8,16 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.LinkedList;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  *
  * @author wcordova
  */
 public class ClaseVectores {
-    
+
+    private static final Logger logger = LogManager.getLogger(ClaseVectores.class);
     /**
      * Ejemplo 1: ArrayList y LinkedList
      */
@@ -26,16 +29,16 @@ public class ClaseVectores {
         lista.add(30);
         lista.add(10);
         lista.add(50);
-        
-        System.out.println("ArrayList: " + lista);
+
+        logger.info("ArrayList: " + lista);
         
         ArrayList<String> listaString = new ArrayList<>();
         listaString.add("Walter");
         listaString.add("Anibal");
         listaString.add("Cordova");
         listaString.remove(1);
-        
-        System.out.println("ArrayList: " + listaString);
+
+        logger.info("ArrayList: " + listaString);
 
         // LinkedList - Lista enlazada
         LinkedList<String> nombres = new LinkedList<>();
@@ -44,8 +47,8 @@ public class ClaseVectores {
         nombres.add("Pedro");
         
         nombres.remove();
-        
-        System.out.println("LinkedList: " + nombres);
+
+        logger.info("LinkedList: " + nombres);
     }
     
     /**
@@ -55,7 +58,7 @@ public class ClaseVectores {
         int[] numeros = {10, 20, 30, 40, 50};
         int objetivo = 30;
 
-        System.out.println(buscarNumero(numeros, objetivo));
+        logger.info(buscarNumero(numeros, objetivo));
     }
     
     public static boolean buscarNumero(int[] arr, int objetivo) {
@@ -82,8 +85,8 @@ public class ClaseVectores {
         lista.add(3, "8");        
         lista.removeFirst();
         lista.removeLast();
-        lista.remove(2);        
-        System.out.println(lista);
+        lista.remove(2);
+        logger.info(lista);
         
         ArrayList<String> lista2 = new ArrayList<>();
         lista2.add("A");
@@ -95,7 +98,7 @@ public class ClaseVectores {
         //quiero la letra C
         for (String letra: lista2) {
             if("C".equals(letra)) {
-                System.out.println(letra);
+                logger.info(letra);
             }
         }
         
